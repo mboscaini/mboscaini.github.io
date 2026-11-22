@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>Manuel Boscaini</title>
+<link>https://TUONOME.github.io/blog.html</link>
+<atom:link href="https://TUONOME.github.io/blog.xml" rel="self" type="application/rss+xml"/>
+<description>Notes on economics, one question at a time.</description>
+<generator>quarto-1.10.19</generator>
+<lastBuildDate>Sat, 21 Nov 2026 23:00:00 GMT</lastBuildDate>
+<item>
+  <title>Hello, world: why this blog</title>
+  <dc:creator>Manuel Boscaini</dc:creator>
+  <link>https://TUONOME.github.io/posts/2026-11-22-hello-world/</link>
+  <description><![CDATA[ 
+
+
+
+
+<!--
+Questo è il tuo primo post di prova: riscrivilo come vuoi, oppure cancellalo
+quando pubblichi il primo post vero. Ogni post è una cartella dentro posts/
+con un file index.qmd: copia questa cartella, cambia nome e data, e scrivi.
+-->
+<p>This is the first post on this blog. The idea is simple: take one question at a time, look at the data, and try to reason about it like an economist, carefully, with the mechanism spelled out and the obvious objections answered.</p>
+<p>To check that everything works, here is a chart made in R directly inside the post. It uses the <code>economics</code> dataset that comes with ggplot2 (US monthly data from FRED).</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">library</span>(ggplot2)</span>
+<span id="cb1-2"></span>
+<span id="cb1-3">economics<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>unemp_rate <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> economics<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>unemploy <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span> economics<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>pop <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">100</span></span>
+<span id="cb1-4"></span>
+<span id="cb1-5"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">ggplot</span>(economics, <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">aes</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">x =</span> date, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">y =</span> unemp_rate)) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb1-6">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">geom_line</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">colour =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"#1f4e5f"</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">linewidth =</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.7</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb1-7">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">labs</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">x =</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">NULL</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">y =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Unemployed, % of population"</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb1-8">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">theme_minimal</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">base_size =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">13</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb1-9">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">theme</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">panel.grid.minor =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">element_blank</span>(),</span>
+<span id="cb1-10">        <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">plot.background =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">element_rect</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">fill =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"#fbfaf7"</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">colour =</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">NA</span>))</span></code></pre></div></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-unemployment" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-unemployment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://TUONOME.github.io/posts/2026-11-22-hello-world/index_files/figure-html/fig-unemployment-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-unemployment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Unemployed people as a share of the US population, 1967–2015. Source: FRED, via the ggplot2 <code>economics</code> dataset.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>(Note: this is unemployed people over the <em>total</em> population, not the official unemployment rate, which divides by the labour force. Spotting that kind of difference is part of the point of this blog.)</p>
+
+
+
+ ]]></description>
+  <category>meta</category>
+  <guid>https://TUONOME.github.io/posts/2026-11-22-hello-world/</guid>
+  <pubDate>Sat, 21 Nov 2026 23:00:00 GMT</pubDate>
+</item>
+</channel>
+</rss>

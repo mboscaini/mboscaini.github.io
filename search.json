@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Blog",
+    "section": "",
+    "text": "Hello, world: why this blog\n\n\n\nmeta\n\n\n\nWhat I want to do here, and a first chart to test the setup.\n\n\n\n\n\nNov 22, 2026\n\n\nManuel Boscaini\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/2026-11-22-hello-world/index.html",
+    "href": "posts/2026-11-22-hello-world/index.html",
+    "title": "Hello, world: why this blog",
+    "section": "",
+    "text": "This is the first post on this blog. The idea is simple: take one question at a time, look at the data, and try to reason about it like an economist, carefully, with the mechanism spelled out and the obvious objections answered.\nTo check that everything works, here is a chart made in R directly inside the post. It uses the economics dataset that comes with ggplot2 (US monthly data from FRED).\n\n\nShow code\nlibrary(ggplot2)\n\neconomics$unemp_rate &lt;- economics$unemploy / economics$pop * 100\n\nggplot(economics, aes(x = date, y = unemp_rate)) +\n  geom_line(colour = \"#1f4e5f\", linewidth = 0.7) +\n  labs(x = NULL, y = \"Unemployed, % of population\") +\n  theme_minimal(base_size = 13) +\n  theme(panel.grid.minor = element_blank(),\n        plot.background = element_rect(fill = \"#fbfaf7\", colour = NA))\n\n\n\n\n\n\n\n\nFigure 1: Unemployed people as a share of the US population, 1967–2015. Source: FRED, via the ggplot2 economics dataset.\n\n\n\n\n\n(Note: this is unemployed people over the total population, not the official unemployment rate, which divides by the labour force. Spotting that kind of difference is part of the point of this blog.)"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Manuel Boscaini",
+    "section": "",
+    "text": "Hi, I’m Manuel. I study economics at University of Verona, with a particular interest in behavioral and experimental economics.\nThis site is where I practice thinking out loud: short posts that take a question, look at the data, and try to say something precise about it through an economic lens."
+  }
+]
