@@ -1,0 +1,17 @@
+{
+  "hash": "078c0d2647b9554dd1686cb790eb4ab1",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Hello, world: why this blog\"\ndescription: \"What I want to do here, and a first chart to test the setup.\"\ndate: 2026-11-22\ncategories: [meta]\n---\n\n<!--\nQuesto è il tuo primo post di prova: riscrivilo come vuoi, oppure cancellalo\nquando pubblichi il primo post vero. Ogni post è una cartella dentro posts/\ncon un file index.qmd: copia questa cartella, cambia nome e data, e scrivi.\n-->\n\nThis is the first post on this blog. The idea is simple: take one question at a time, look at the data, and try to reason about it like an economist, carefully, with the mechanism spelled out and the obvious objections answered.\n\nTo check that everything works, here is a chart made in R directly inside the post. It uses the `economics` dataset that comes with ggplot2 (US monthly data from FRED).\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(ggplot2)\n\neconomics$unemp_rate <- economics$unemploy / economics$pop * 100\n\nggplot(economics, aes(x = date, y = unemp_rate)) +\n  geom_line(colour = \"#1f4e5f\", linewidth = 0.7) +\n  labs(x = NULL, y = \"Unemployed, % of population\") +\n  theme_minimal(base_size = 13) +\n  theme(panel.grid.minor = element_blank(),\n        plot.background = element_rect(fill = \"#fbfaf7\", colour = NA))\n```\n\n::: {.cell-output-display}\n![Unemployed people as a share of the US population, 1967–2015. Source: FRED, via the ggplot2 `economics` dataset.](index_files/figure-html/fig-unemployment-1.png){#fig-unemployment width=672}\n:::\n:::\n\n\n(Note: this is unemployed people over the *total* population, not the official unemployment rate, which divides by the labour force. Spotting that kind of difference is part of the point of this blog.)\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

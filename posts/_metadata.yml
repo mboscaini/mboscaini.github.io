@@ -1,0 +1,8 @@
+# Impostazioni comuni a tutti i post
+author: "Manuel Boscaini"
+toc: false
+code-fold: true          # il codice R è nascosto, si apre con un clic
+code-summary: "Show code"
+fig-align: center
+fig-width: 7
+fig-height: 4

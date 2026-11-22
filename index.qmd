@@ -1,0 +1,22 @@
+---
+title: "Manuel Boscaini"
+subtitle: "Economics student"
+# Per aggiungere una tua foto: salvala come assets/profile.jpg e togli il # sotto
+# image: assets/profile.jpg
+about:
+  template: jolla
+  links:
+    - icon: pencil-square
+      text: Blog
+      href: blog.qmd
+    - icon: github
+      text: GitHub
+      href: https://github.com/TUONOME
+    - icon: envelope
+      text: Email
+      href: mailto:tua.email@esempio.com
+---
+
+Hi, I'm Manuel. I study economics at University of Verona, with a particular interest in behavioral and experimental economics. 
+
+This site is where I practice thinking out loud: short posts that take a question, look at the data, and try to say something precise about it through an economic lens.

@@ -1,0 +1,42 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "Manuel Boscaini"
+  # Sostituisci TUONOME con il tuo nuovo username GitHub
+  site-url: "https://TUONOME.github.io"
+  description: "Notes on economics, one question at a time."
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: blog.qmd
+        text: Blog
+      # Quando hai il CV, mettilo in assets/cv.pdf e togli il # dalle due righe sotto
+      # - href: assets/cv.pdf
+      #   text: CV
+    right:
+      - icon: github
+        href: https://github.com/TUONOME
+        aria-label: GitHub
+      - icon: rss
+        href: blog.xml
+        aria-label: RSS feed
+  page-footer:
+    left: "© 2026 Manuel Boscaini"
+    right: "Built with [Quarto](https://quarto.org)"
+
+format:
+  html:
+    theme:
+      light: [flatly, styles.scss]
+    mainfont: "Source Sans 3"
+    smooth-scroll: true
+    link-external-newwindow: true
+
+# Riesegue il codice solo dei file modificati
+execute:
+  freeze: auto
+
+lang: en
